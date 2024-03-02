@@ -1,0 +1,46 @@
+<div class="Form">
+    <div class="form-container">
+        <h1 style="text-align: center;">
+            <span style="color:blue;">F</span>
+            <span style="color:red;">u</span>
+            <span style="color:yellow;">n</span>
+            <span style="color: aqua;">d</span>
+            <span style="color:black;">o</span>
+            <span style="color:blue;">o</span>
+            <span style="color:red;">N</span>
+            <span style="color:yellow;">o</span>
+            <span style="color:aqua;">t</span>
+            <span style="color:green;">e</span>
+            <span style="color:darkmagenta;">s</span>
+        </h1>
+        <h1 style="text-align:center;">
+            <span style="color: black;">Sign in</span>
+        </h1>
+        <h3 style="text-align: center;">
+            <span style="color: black;">with your Email Acount</span>
+        </h3>
+        <form [formGroup] = "LoginForm" (ngSubmit) = "onSubmit()" >
+            <div style="margin-left: 23px;">
+                <mat-form-field appearance="outline" style="width: 320px;">
+                    <mat-label>Email or Phone</mat-label>
+                    <input matInput placeholder="Enter Email or Phone" formControlName="email" >
+                </mat-form-field>
+            </div>
+            <div style="margin-left: 23px; margin-bottom: 0px;">
+                <mat-form-field appearance="outline" style="width: 320px;" >
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="Enter Password" formControlName="password">
+                </mat-form-field>
+            </div>
+            <button mat-button color="primary" style="color: blue; margin-left: 10px; margin-bottom: 0px;">Forgot email?</button><br><br>
+            <h5 style="margin-left: 24px; margin-bottom: 0px;">
+                <span style="color: black;">Not your computer? Guest mode to sign in privately.</span>
+            </h5>
+            <button mat-button color="primary" style="color: blue; margin-left: 10px; margin-bottom: 0px; margin-top: 0;">Learn more about using Guest mode</button><br><br>
+            <div>
+                <button mat-button color="primary" style="color: blue; margin-left: 10px;">create account</button>
+                <button mat-raised-button color="primary" style="margin-left: 140px;">Next</button>
+            </div>
+        </form>
+    </div>
+</div>

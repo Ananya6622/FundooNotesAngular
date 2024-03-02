@@ -1,0 +1,58 @@
+<div class="Dashboard">
+    <div class="search" style="height: 70px;">
+            <button class="button" mat-icon-button style="color:black" >
+                <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
+            </button>
+            <button mat-icon-button style="margin-left: 10px;">
+                <img src="assets/FundooKeep.png" alt="Image" style="width: 40px; height: 40px; margin-right: 10px;">
+                <span style="color:dimgray; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 25px;">Keep</span>
+            </button>
+            <mat-form-field class="form" appearance="outline" style="width: 700px; background: transparent;">
+                <mat-label>Search</mat-label>
+                <input matInput style="height: 20px;" placeholder="Search">
+            </mat-form-field>
+            <button class="button" mat-icon-button style="color:black; margin-left: 290px;" >
+                <mat-icon>refresh</mat-icon>
+            </button>
+            <button class="button" mat-icon-button style="color:black; margin-left: 10px;" >
+                <mat-icon>grid_view</mat-icon>
+            </button>
+            <button class="button" mat-icon-button style="color:black; margin-left: 10px;" >
+                <mat-icon>settings</mat-icon>
+            </button>
+            <button class="button" mat-icon-button style="color:black; margin-left: 10px;" >
+                <mat-icon>apps</mat-icon>
+            </button>
+    </div>
+    <div>
+        <mat-sidenav-container>
+                <mat-sidenav #sidenav mode="side">
+                    <mat-nav-list>
+                      <mat-list-item>
+                        <img src="assets/notes.png">
+                        <span> Notes</span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <img src="assets/remainders.png">
+                        <span> Remainders</span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <img src="assets/edit.png">
+                        <span> Edit Labels</span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <img src="assets/archive.png">
+                        <span> Archive</span>
+                    </mat-list-item>
+                      <mat-list-item>
+                        <img src="assets/delete.png">
+                        <span> Trash</span>
+                    </mat-list-item>
+                    </mat-nav-list>
+                  </mat-sidenav>
+                  <mat-sidenav-content class="sidenav">
+                    <router-outlet></router-outlet>
+                  </mat-sidenav-content>
+        </mat-sidenav-container>
+    </div>
+</div>
