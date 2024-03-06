@@ -7,6 +7,9 @@ import { RegisterComponent } from './Components/register/register.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { CreateNotesComponent } from './Components/create-notes/create-notes.component';
 import { DisplayNotesComponent } from './Components/display-notes/display-notes.component';
+import { ArchivedNotesComponent } from './Components/archived-notes/archived-notes.component';
+import { GetNotesComponent } from './Components/get-notes/get-notes.component';
+import { TrashNotesComponent } from './Components/trash-notes/trash-notes.component';
 
 const routes: Routes = [
   {path : 'Login', component : LoginComponent},
@@ -14,9 +17,13 @@ const routes: Routes = [
   {path : 'ResetPassword', component : ResetPasswordComponent},
   {path:"Register", component:RegisterComponent},
   {path:"Dashboard", component:DashboardComponent,
-children:[
-  {path:'createNotes',component:CreateNotesComponent},
-  {path:'displayNotes',component:DisplayNotesComponent}
+  children:[
+    {
+      path:'',redirectTo:"/Dashboard/notes",pathMatch:'full'
+    },
+    {path:'notes',component: GetNotesComponent},
+    {path:'archive',component: ArchivedNotesComponent},
+    {path:'trash',component: TrashNotesComponent}
 ]}
 ];
 

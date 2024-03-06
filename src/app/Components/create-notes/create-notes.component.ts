@@ -10,16 +10,14 @@ import { NotesService } from 'src/app/Services/notes/notes.service';
 export class CreateNotesComponent implements OnInit {
   submitted :boolean= false;
   constructor(private notes : NotesService) { }
-  display:boolean = true;
+  
   token:any
-
+  
   ngOnInit(): void {
   }
   expanded: boolean = false;
 
-toggleExpand() {
-  this.expanded = !this.expanded;
-}
+  isValid:boolean=true;
 
 notesform = new FormGroup({
   title : new FormControl('',[Validators.required]),
@@ -34,9 +32,14 @@ onCreateNote(){
   };
   this.notes.addNote(reqData).subscribe((res:any)=>{
     console.log(res);
-    
-  });
+    localStorage.getItem("token");
+  })
+  this.isValid = true;
 
+}
+else{
+  console.log("give input");
+  this.isValid = true;
 }
 }
   

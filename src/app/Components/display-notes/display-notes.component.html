@@ -1,8 +1,12 @@
 
-<div>
-    <mat-card>
+<div *ngFor="let notes of notesList">
+    <mat-card [style.background]="notes.color">
+        <mat-card-title mat-input class="title">{{notes.title}}</mat-card-title>
         <mat-card-content>
-            simple card
+            <div>{{notes.note}}</div><br>
+            <div>
+                <app-icons></app-icons>
+            </div>
         </mat-card-content>
     </mat-card>
 </div>

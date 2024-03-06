@@ -1,35 +1,31 @@
 <br><body>
-  <mat-card style="width: 600px; margin-left: 400px;">
+  <mat-card style="width: 650px; margin-left: 400px;">
       <mat-card-content>
-          <div (click)="toggleExpand()" style="cursor: pointer;">
+        <div *ngIf="isValid;then Create_Notes else Take_Notes"></div>
+            <ng-template #Create_Notes>
               <div style="display: flex; align-items: center;">
-                  <input matInput placeholder="Take a note..." [ngStyle]="{'flex': expanded ? '0' : '1'}">
-                  <button mat-icon-button style="color: grey;" *ngIf="!expanded">
-                      <mat-icon>check_box</mat-icon>
-                  </button>
-                  <button mat-icon-button style="color: grey;" *ngIf="!expanded">
-                      <mat-icon>brush</mat-icon>
-                  </button>
-                  <button mat-icon-button style="color: grey;" *ngIf="!expanded">
-                      <mat-icon>image</mat-icon>
-                  </button>
-              </div>
-          </div>
-          <div *ngIf="expanded">
+                  <input matInput placeholder="Take a note..." (click)="isValid= !isValid">
+                  <button mat-button><img src="assets/checkBox.png"></button>
+                  <button mat-button><img src="assets/brush1.png"></button>
+                  <button mat-button><img src="assets/image1.png"></button>
+                </div>
+            </ng-template>
+          
+          <ng-template #Take_Notes>
+          <div >
               <form [formGroup]="notesform" (ngSubmit)="onCreateNote()">
                   <div style="display: flex; align-items: center;">
-                      <input matInput placeholder="Title" style="flex: 1;" formControlName="title">
-                      <button mat-icon-button style="color: grey;">
-                          <mat-icon>push_pin</mat-icon>
-                      </button>
+                      <input matInput placeholder="Title"  formControlName="title" >
+                      <button mat-button><img src="assets/pin.png"></button>
                   </div><br>
                   <div>
-                      <input matInput placeholder="Take a note..." style="flex: 1;" formControlName="note">
+                      <input matInput placeholder="Take a note..."  formControlName="note">
                       <br><br>
                       <app-icons></app-icons>
                   </div>
               </form>
           </div>
+        </ng-template>
       </mat-card-content>
   </mat-card>
 </body>

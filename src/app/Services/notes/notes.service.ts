@@ -15,17 +15,17 @@ export class NotesService {
         'Authorization': 'Bearer ' +this.token
       })
     }
-    return this.httpService.postservice('Note/AddNote', reqData, true, header)
+    return this.httpService.postservice('Note/Add-Note', reqData, true, header)
   }
 
-  getNote(reqData: any){
+  getNote(){
     let header = {
       Headers:new HttpHeaders({
         'Content-Type' : 'application/json',
         'Authorization': 'Bearer ' +this.token
       })
     }
-    return this.httpService.getservice('Note/getNote', true, header)
+    return this.httpService.getservice('Note/Get-All-Notes', true, header)
   }
 
   updateNote(reqData: any){
@@ -35,7 +35,27 @@ export class NotesService {
         'Authorization': 'Bearer ' +this.token
       })
     }
-    return this.httpService.putservice('Note/getNote', reqData, true, header)
+    return this.httpService.putservice('Note/update-note', reqData, true, header)
+  }
+
+  trashNote(reqData: any){
+    let header = {
+      Headers:new HttpHeaders({
+        'Content-Type' : 'application/json',
+        'Authorization': 'Bearer ' +this.token
+      })
+    }
+    return this.httpService.putservice('Note/Is-trash-or-not', reqData, true, header)
+  }
+
+  archiveNote(reqData: any){
+    let header = {
+      Headers:new HttpHeaders({
+        'Content-Type' : 'application/json',
+        'Authorization': 'Bearer ' +this.token
+      })
+    }
+    return this.httpService.putservice('Note/Is-Archieve-or-not', reqData, true, header)
   }
 
 }

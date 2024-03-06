@@ -24,6 +24,10 @@ import { IconsComponent } from './Components/icons/icons.component';
 import { CreateNotesComponent } from './Components/create-notes/create-notes.component';
 import {MatCardModule} from '@angular/material/card';
 import { DisplayNotesComponent } from './Components/display-notes/display-notes.component';
+import { GetNotesComponent } from './Components/get-notes/get-notes.component';
+import { UpdateNotesComponent } from './Components/update-notes/update-notes.component';
+import { TrashNotesComponent } from './Components/trash-notes/trash-notes.component';
+import { ArchivedNotesComponent } from './Components/archived-notes/archived-notes.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,11 @@ import { DisplayNotesComponent } from './Components/display-notes/display-notes.
     DashboardComponent,
     IconsComponent,
     CreateNotesComponent,
-    DisplayNotesComponent
+    DisplayNotesComponent,
+    GetNotesComponent,
+    UpdateNotesComponent,
+    TrashNotesComponent,
+    ArchivedNotesComponent
   ],
   imports: [
     BrowserModule,
