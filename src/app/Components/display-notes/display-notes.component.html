@@ -1,11 +1,11 @@
 
 <div *ngFor="let notes of notesList">
     <mat-card [style.background]="notes.color">
-        <mat-card-title mat-input class="title">{{notes.title}}</mat-card-title>
+        <mat-card-title mat-input class="title" (click)="editNoteDialogBox(notes)">{{notes.title}}</mat-card-title>
         <mat-card-content>
-            <div>{{notes.note}}</div><br>
+            <div (click)="editNoteDialogBox(notes)">{{notes.note}}</div><br>
             <div>
-                <app-icons></app-icons>
+                <app-icons [notesData]="notes"></app-icons>
             </div>
         </mat-card-content>
     </mat-card>

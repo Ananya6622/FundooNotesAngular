@@ -28,6 +28,9 @@ import { GetNotesComponent } from './Components/get-notes/get-notes.component';
 import { UpdateNotesComponent } from './Components/update-notes/update-notes.component';
 import { TrashNotesComponent } from './Components/trash-notes/trash-notes.component';
 import { ArchivedNotesComponent } from './Components/archived-notes/archived-notes.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -60,7 +63,10 @@ import { ArchivedNotesComponent } from './Components/archived-notes/archived-not
     MatListModule,
     MatToolbarModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule,
+    MatMenuModule,
+    MatTooltipModule
 
   ],
   providers: [],

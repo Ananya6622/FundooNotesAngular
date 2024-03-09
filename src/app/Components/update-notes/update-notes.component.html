@@ -7,7 +7,7 @@
         <input class="Take" placeholder="Take a Note" [(ngModel)]="note"><br><br>
         <div>
             <app-icons></app-icons>
-            <button mat-button type="submit">Close</button>
+            <button mat-button type="submit" (click)="closeDialog()" style="opacity: 0.9; background: none; border: none;">Close</button>
         </div><br>
     </div>
 </div>

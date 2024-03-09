@@ -31,4 +31,15 @@ export class GetNotesComponent implements OnInit {
       
     })
   }
+
+  RefreshCreatedNotes($event:any){
+    console.log('added notes refreshed'+$event)
+    this.onCreateNote();
+  }
+
+  RefreshDisplayNotes($event:any){
+    console.log('display notes refreshed'+$event)
+    this.onCreateNote();
+  }
+
 }
